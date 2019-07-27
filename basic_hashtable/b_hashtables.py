@@ -73,20 +73,26 @@ def hash_table_retrieve(hash_table, key):
         print(f"Warning: Index {index} does not exist! Cannot retrieve key {key}.")
         return None
 
-    return hash_table.storage[index]
+    return hash_table.storage[index].value
 
 
 def Testing():
-    ht = BasicHashTable(16)
+    # ht = BasicHashTable(16)
 
-    hash_table_insert(ht, "line", "Here today...\n")
+    # hash_table_insert(ht, "line", "Here today...\n")
 
-    hash_table_remove(ht, "line")
+    # hash_table_remove(ht, "line")
 
-    if hash_table_retrieve(ht, "line") is None:
-        print("...gone tomorrow (success!)")
-    else:
-        print("ERROR:  STILL HERE")
+    # if hash_table_retrieve(ht, "line") is None:
+    #     print("...gone tomorrow (success!)")
+    # else:
+    #     print("ERROR:  STILL HERE")
+    ht = BasicHashTable(8)
 
+    hash_table_insert(ht, "key-0", "new-val-0")
+    print(ht.storage)
+    return_value = hash_table_retrieve(ht, "key-0")
+    print(f"Return value: {return_value}")
+    
 
 Testing()
